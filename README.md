@@ -1,0 +1,2 @@
+Retrofit simple scala wrapper
+
