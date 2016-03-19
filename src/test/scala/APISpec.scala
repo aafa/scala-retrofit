@@ -7,11 +7,12 @@ import retrofit.http.{GET, Path}
   * Created by Alexey Afanasev on 19.03.16.
   */
 
-class APISpec extends FlatSpec with Matchers{
+class APISpec extends FlatSpec with Matchers {
   "API" should "work" in {
-    val api = new ScalaRetrofitBuilder().builder
-        .setEndpoint("https://api.bitfinex.com/v1")
-        .build().create(classOf[APIServiceDescriptor])
+    val api = new ScalaRetrofitBuilder()
+      .setEndpoint("https://api.bitfinex.com/v1")
+      .build()
+      .create(classOf[APIServiceDescriptor])
 
     val pubticker: Ticker = api.pubticker("btcusd")
     println(pubticker)
@@ -21,8 +22,8 @@ class APISpec extends FlatSpec with Matchers{
   }
 }
 
-trait APIServiceDescriptor{
-  @GET("/pubticker/{symbol}") def pubticker(@Path("symbol") symbol : String) : Ticker
+trait APIServiceDescriptor {
+  @GET("/pubticker/{symbol}") def pubticker(@Path("symbol") symbol: String): Ticker
 }
 
-case class Ticker(@JsonProperty("last_price") var last_price : String)
+case class Ticker(@JsonProperty("last_price") var last_price: String)

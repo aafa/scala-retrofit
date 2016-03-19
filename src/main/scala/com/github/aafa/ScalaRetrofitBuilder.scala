@@ -10,9 +10,8 @@ import retrofit.RestAdapter.Builder
 /**
   * Created by Alexey Afanasev on 18.03.16.
   */
-class ScalaRetrofitBuilder {
-
-  def builder: Builder = {
+class ScalaRetrofitBuilder extends Builder{
+  {
     val jackson = new ObjectMapper() with ScalaObjectMapper
     jackson.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
     jackson.registerModule(DefaultScalaModule)
