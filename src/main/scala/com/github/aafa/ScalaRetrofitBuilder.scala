@@ -21,10 +21,7 @@ class ScalaRetrofitBuilder(settings: ObjectMapper => Unit = () => _) extends Bui
 
     val converter = new JacksonConverter(jackson)
 
-    new RestAdapter.Builder()
-      .setConverter(converter)
-      .setClient(new OkClient())
-      .setExecutors(new ScheduledThreadPoolExecutor(5), null)
+    this.setConverter(converter).setClient(new OkClient())
   }
 }
 
