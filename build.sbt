@@ -16,8 +16,8 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   "com.squareup.retrofit" % "retrofit" % "1.9.0" exclude("gson", "gson"),
   "com.squareup.okhttp" % "okhttp" % "2.3.0",
-  "com.fasterxml.jackson.core" % "jackson-databind" % "2.6.5",
-  "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.6.5"
+  "com.fasterxml.jackson.core" % "jackson-databind" % "2.7.2",
+  "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.7.2"
 )
 
 libraryDependencies ++= Seq(
