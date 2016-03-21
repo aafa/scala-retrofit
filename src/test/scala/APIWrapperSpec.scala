@@ -1,18 +1,11 @@
 import com.github.aafa.DefaultRetrofitBuilder
-import org.scalatest.FlatSpec
+import org.scalatest.{FlatSpec, Ignore, Suite}
 import retrofit.RestAdapter
 
 /**
   * Created by Alexey Afanasev on 20.03.16.
   */
-class APIWrapperSpec extends FlatSpec {
-  val api = new DefaultRetrofitBuilder()
-    .setEndpoint("https://api.bitfinex.com/v1")
-    .setLogLevel(RestAdapter.LogLevel.FULL)
-    .build()
-    .create(classOf[APIServiceDescriptor])
-
-  val pubticker: Ticker = api.pubticker("btcusd")
+class APIWrapperSpec extends AbstractSpec {
 
   "DefaultRetrofitBuilder" should "work" in {
     println(pubticker)
@@ -28,8 +21,5 @@ class APIWrapperSpec extends FlatSpec {
     assert(pubticker.mid > 1)
   }
 
-  "Option[AnyVal]" should "work" in {
-    // see https://github.com/FasterXML/jackson-module-scala/issues/209
-    assert(pubticker.high.exists(_ > 1))
-  }
+
 }
