@@ -1,3 +1,5 @@
+package api
+
 import com.fasterxml.jackson.annotation.{JsonCreator, JsonProperty}
 
 /**

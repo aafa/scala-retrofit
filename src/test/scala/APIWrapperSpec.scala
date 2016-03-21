@@ -12,12 +12,12 @@ class APIWrapperSpec extends AbstractSpec {
     assert(pubticker.low.nonEmpty)
   }
 
-  "Option[Java Type]" should "work" in {
+  "Option[Java Type]" should "deserialize" in {
     assert(pubticker.last_price.nonEmpty)
     assert(pubticker.last_price.exists(_ > 1))
   }
 
-  "AnyVal" should "work" in {
+  "AnyVal" should "deserialize" in {
     assert(pubticker.mid > 1)
   }
 

@@ -1,3 +1,4 @@
+import api.{APIServiceDescriptor, Ticker}
 import com.github.aafa.DefaultRetrofitBuilder
 import org.scalatest.FlatSpec
 import retrofit.RestAdapter

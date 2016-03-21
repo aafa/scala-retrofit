@@ -6,7 +6,7 @@ import org.scalatest.Ignore
 @Ignore
 class APIProblemsSpec extends AbstractSpec{
 
-  "Option[AnyVal]" should "work" in {
+  "Option[AnyVal]" should "deserialize" in {
     // see https://github.com/FasterXML/jackson-module-scala/issues/209
     assert(pubticker.high.exists(_ > 1))
   }

@@ -1,3 +1,5 @@
+package api
+
 import retrofit.http.{GET, Path}
 
 /**
